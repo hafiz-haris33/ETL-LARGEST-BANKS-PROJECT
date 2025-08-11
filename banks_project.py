@@ -29,8 +29,8 @@ def extract(url, table_attribs):
             data_dict = {'Name':col[1].find_all('a')[1]['title'], 
             'MC_USD_Billion':float(col[2].contents[0][:-1])}
             # or
-            data_dict = {'Name':[col[1].find('a', recursive=False).contents[0]], 
-            'MC_USD_Billion':[float(col[2].contents[0].strip())]}
+            # data_dict = {'Name':[col[1].find('a', recursive=False).contents[0]], 
+            # 'MC_USD_Billion':[float(col[2].contents[0].strip())]}
             df1 = pd.DataFrame(data_dict, index=[0])
             df = pd.concat([df, df1], ignore_index=True)
     return df
